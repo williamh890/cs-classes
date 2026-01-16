@@ -1,8 +1,9 @@
 def curry2(f):
-    def apply_f(x):
-        return lambda y: f(x, y)
-
-    return apply_f
+    def curry1(x):
+        def curry(y):
+            return f(x, y)
+        return curry
+    return curry1
 
 
 def curryN(f, n, params=()):
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     def add2(a, b):
         return a + b
 
-    print(curry2(add2)(3)(10))  # returns 13
+    assert curry2(add2)(3)(10) == 13
 
-    curryN(print,3)("i feel gr")(8)("now") # prints i feel gr 8 now
-    curryN(print,0)  # prints one blank line (special case)
+    curryN(print, 3)("i feel gr")(8)("now")  # prints i feel gr 8 now
+    curryN(print, 0)   # prints one blank line (special case)
