@@ -1,0 +1,26 @@
+; Run on https://lawlorcode.com/2024/turing_pp.html
+
+split 0 0 r split
+split 1 1 r split
+split | | l check-zero
+split _ | l check-zero
+
+check-zero 0 0 l check-zero
+check-zero 1 1 * center
+check-zero _ _ * halt
+
+center 0 0 r center
+center 1 1 r center
+center | | l borrow
+
+borrow 0 1 l borrow
+borrow 1 0 r add-one
+borrow _ _ r add-one
+
+add-one 0 0 r add-one
+add-one 1 1 r add-one
+add-one | | r add-one
+add-one _ 1 * find-number
+
+find-number 1 1 l find-number
+find-number | | l check-zero
