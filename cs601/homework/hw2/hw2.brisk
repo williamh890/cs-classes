@@ -1,6 +1,6 @@
-set(r4, 0x4),              // mov rcx, n
-set(r5, 0x0),              // mov rax, 0
-set(r7, 2), // loop start
-add(r5, r4, r5), //     add rax, rcx (loop start)
-dec(r4),                //     add rcx, -1
+set(r4, 0x4),
+set(r5, 0x0),
+set(r7, 2),
+add(r5, r4, r5),
+dec(r4),
 swapcond(rF, r7, r4, 0)
