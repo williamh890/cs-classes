@@ -1,3 +1,3 @@
-opt simple.ll -passes=verify,mem2reg -S -o opt.ll
-llc opt.ll --filetype=obj -o simple.o
-gcc main.c simple.o
+opt sumtorial.ll --O3 -S -o opt.ll
+llc opt.ll --filetype=obj -o sumtorial.o
+gcc main.c sumtorial.o
