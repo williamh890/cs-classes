@@ -11,7 +11,7 @@ fn is_valid_url(possible_url: &str) -> bool {
         (\#[a-z]+)?
     $").unwrap();
 
-    return url_re.is_match(possible_url);
+    url_re.is_match(possible_url)
 }
 
 fn main() {
