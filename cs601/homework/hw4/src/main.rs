@@ -34,7 +34,8 @@ fn main() {
 
     for url in &good_urls {
         let is_url = is_valid_url(url);
-        assert!(is_url, "Failed to match URL {}", url)
+        assert!(is_url, "Failed to match URL {}", url);
+        println!("{}: {}", is_url, url);
     }
 
     let bad_urls = [
@@ -47,6 +48,7 @@ fn main() {
 
     for url in &bad_urls {
         let is_url = is_valid_url(url);
-        assert!(!is_url, "False match on URL {}", url)
+        assert!(!is_url, "False match on URL {}", url);
+        println!("{}: {}", is_url, url);
     }
 }
