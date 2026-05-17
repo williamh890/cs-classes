@@ -18,7 +18,6 @@ using std::cout;
 using std::cin;
 
 
-
 #include <deque>
 #include <set>
 
@@ -30,7 +29,6 @@ struct table_entry_t {
 	input_t input; // read that input (or 0 for epsilon)
 	state_t next; // go to next state
 };
-const input_t EPSILON_TRANSITION = 0;
 
 typedef std::vector<table_entry_t> table_list_t;
 
@@ -123,6 +121,9 @@ state_t dfa_powerset(const powerset_t &p,std::map<powerset_t, state_t> &dfa_from
 
 	return ds;
 }
+
+
+const input_t EPSILON_TRANSITION = 0;
 
 // Convert this NFA to a DFA
 //  (the nfa is const, but std::map's convenient [] lookups aren't)
